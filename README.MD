@@ -3,4 +3,4 @@ This bot will be used mainly in private serves, commands are in portuguese but w
 
 ## Things i wish to add
     1. Delete messages
-    2. Use proper commands/slash commands with [py-cord](https://github.com/Pycord-Development/pycord) library
+    2. Use proper commands/slash commands with py-cord library
