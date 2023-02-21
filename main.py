@@ -1,6 +1,8 @@
 import discord
 import info
 
+from random import randint
+
 def main():
     intents = discord.Intents.default()
     intents.message_content = True
@@ -10,7 +12,7 @@ def main():
 
     @client.event
     async def on_ready():
-        print('Logged in as {client.user}')
+        print(f'Logged in as {client.user}')
 
     @client.event
     async def on_message(message):
@@ -19,6 +21,15 @@ def main():
         
         if message.content.startswith('$hello'):
             await message.channel.send('Hello')
+            
+    #Simple command, it basicaly returns a string from a array and send in the channel        
+    @client.event
+    async def on_message(message):
+        if message.author == client.user:
+            return
+        
+        if message.content.startswith('$citacao'):
+            await message.channel.send(info.citacoes[randint(0,5)])
         
     client.run(info.token)
     
